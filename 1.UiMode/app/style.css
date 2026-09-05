@@ -33,23 +33,7 @@
 body {
   margin: 0;
   padding: 3rem 1rem;
-  min-height: 100vh;
-
-  /* レインボーの背景。上から下へ色が流れる。
-     手前のカードは白いままなので、文字の読みやすさは保たれる。
-     スクロールしても位置が動かないよう fixed にしている。 */
   background: var(--bg);
-  background-image: linear-gradient(
-    180deg,
-    #fcd0dd 0%,
-    #fde3b4 22%,
-    #d3f0bb 45%,
-    #b6e2f5 68%,
-    #cdc5f6 88%,
-    #f4c8e8 100%
-  );
-  background-attachment: fixed;
-
   color: var(--text);
   font-family: system-ui, -apple-system, "Hiragino Sans", "Yu Gothic UI",
     "Noto Sans JP", sans-serif;
