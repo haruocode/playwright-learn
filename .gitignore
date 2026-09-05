@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Playwright の実行結果（章フォルダ側の .gitignore でも除外している）
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+.last-run.json
