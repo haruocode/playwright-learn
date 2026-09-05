@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>やることリスト</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>やることリスト</h1>
+
+      <!--
+        Playwright は getByRole / getByLabel でこの画面を操作する。
+        そのため、意味の合った HTML タグを使うことが大事になる。
+          - 入力欄には <label for> を付ける  → getByLabel("やること")
+          - ボタンは <button>                → getByRole("button", { name: "追加" })
+      -->
+      <form id="new-todo-form">
+        <label for="new-todo">やること</label>
+        <input id="new-todo" type="text" placeholder="例: 牛乳を買う" autocomplete="off" />
+        <button type="submit">追加</button>
+      </form>
+
+      <!--
+        追加処理の途中だけ表示される。UI モードの時間旅行で観察する対象。
+        外側の div は高さを先に確保しておくためのもの。これが無いと、
+        「保存中...」が出た瞬間に下のリストがガクッとずれる。
+      -->
+      <div id="status-area">
+        <p id="status" role="status" hidden>保存中...</p>
+      </div>
+
+      <ul id="todo-list"></ul>
+
+      <p id="remaining">残タスク 0 件</p>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
